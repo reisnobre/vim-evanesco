@@ -28,7 +28,6 @@ nnoremap <silent> <Plug>Evanesco_*  :call evanesco#evanesco_star()<CR>:keepjumps
 nnoremap <silent> <Plug>Evanesco_#  :call evanesco#evanesco_star()<CR>:keepjumps normal! #N<CR>:call evanesco#evanesco_star_end()<CR>
 nnoremap <silent> <Plug>Evanesco_g* :call evanesco#evanesco_star()<CR>:keepjumps normal! g*N<CR>:call evanesco#evanesco_star_end()<CR>
 nnoremap <silent> <Plug>Evanesco_g# :call evanesco#evanesco_star()<CR>:keepjumps normal! g#N<CR>:call evanesco#evanesco_star_end()<CR>
-nnoremap <silent> <Plug>Evanesco_gd :call evanesco#evanesco_star()<CR>gd:call evanesco#evanesco_star_end()<CR>
 nnoremap <silent> <Plug>Evanesco_gD :call evanesco#evanesco_star()<CR>gD:call evanesco#evanesco_star_end()<CR>
 
 xnoremap <silent> <Plug>Evanesco_*  <Esc>:<C-U>call evanesco#evanesco_visual_star('/')<CR>
@@ -38,7 +37,7 @@ xnoremap <silent> <Plug>Evanesco_#  <Esc>:<C-U>call evanesco#evanesco_visual_sta
 " command to echo or be saved in command history
 nnoremap <silent> <Plug>Evanesco_visual_search_end :<C-U>call evanesco#evanesco_star_end()<CR>:echo<CR>
 
-for key in ['/', '?', 'n', 'N', '*', '#', 'g*', 'g#', 'gd', 'gD']
+for key in ['/', '?', 'n', 'N', '*', '#', 'g*', 'g#', 'gD']
     if !hasmapto(printf("<Plug>Evanesco_%s", key), "n")
         execute printf("nmap %s <Plug>Evanesco_%s", key, key)
     endif
